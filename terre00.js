@@ -27,6 +27,6 @@ let tab = [
   "z",
 ];
 for (letter of tab) {
-  process.stdout.write(letter);
+  console.log(letter); //Il était possible aussi d'ajouter process.stdout.write(letter)
 }
-console.log("");
+console.log(""); // Ce qui permet le retour à la ligne
