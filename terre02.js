@@ -19,7 +19,7 @@ let args = process.argv.slice(2);
 /**
  * AUTRE SOLUTION (moins conventionelle), à la place de process.argv.slice(2);
  *args.shift(); permet de supprimer l'index 0
- * args.shift(); permet de supprimer l'index 1
+ *args.shift(); permet de supprimer l'index 1
  */
 
 args.forEach((val) => {
