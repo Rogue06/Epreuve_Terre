@@ -1,10 +1,33 @@
 //console.log(__filename.split("/").pop());
-console.log("### SOLUTION 2 ###");
+var input = "Caesar Cipher";
 
-const afficherArgument = (argument, index) => {
-  if (index > 1) {
-    console.log(argument);
+function CaesarCipher(str, num) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  var newStr = "";
+
+  for (var i = 0; i < str.length; i++) {
+    var char = str[i],
+      isUpper = char === char.toUpperCase() ? true : false;
+
+    char = char.toLowerCase();
+
+    if (alphabet.indexOf(char) > -1) {
+      var newIndex = alphabet.indexOf(char) + num;
+      if (newIndex < alphabet.length) {
+        isUpper
+          ? (newStr += alphabet[newIndex].toUpperCase())
+          : (newStr += alphabet[newIndex]);
+      } else {
+        var shiftedIndex = -(alphabet.length - newIndex);
+        isUpper
+          ? (newStr += alphabet[shiftedIndex].toUpperCase())
+          : (newStr += alphabet[shiftedIndex]);
+      }
+    } else {
+      newStr += char;
+    }
   }
-};
+  return newStr;
+}
 
-arguments.forEach(afficherArgument);
+console.log(CaesarCipher(input, 20));
