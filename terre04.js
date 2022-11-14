@@ -1,23 +1,37 @@
 /**
- * 
+ * Créez un programme qui permet de déterminer si l’argument donné est un entier pair ou impair..
+
+
+Exemples d’utilisation :
+$> ruby exo.rb 2
+pair
+
+$> ruby exo.rb 5
+impair
+
+
+$> ruby exo.rb Bonjour
+Tu ne me la mettras pas à l’envers.
+
+$> ruby exo.rb
+Tu ne me la mettras pas à l’envers.
+
+
+Attention : gérez aussi les entiers négatifs.
+
  */
 
-var readline = require("readline-sync");
+let saisie1 = process.argv[2];
+let entier = parseInt(saisie1, 10); // permet de "parser" la string récuperé suur argv[2] et la parser en entier 
 
-var age = 17;
-console.log((age < 18) ? "mineur" : "majeur");
+if(saisie1 % 2 == 0){
+    console.log("pair");
+    
+}else if(saisie1 % 2 == 1 || saisie1 % 2 == -1){ // gestion des entiers pos et neg 
+    console.log("impair"); 
+}else{
+    console.log("Tu as cru que tu allais t'en tirer comme ça ? :) ");
+}
 
-var sportif = false;
-console.log((sportif) ? "bien" : "Devrait faire du sport");
 
-var sexe = false;
-var sexeEnMot = (sexe) ? "Femme" : "Homme";
-console.log(sexeEnMot);
 
-var saisie1 = readline.questionInt("Choisir un nombre : ");
-var parite = (saisie1 % 2 === 0) ? "pair" : "impair";
-console.log("Parite : " + parite);
-
-var saisie2 = readline.questionInt("Choisir un deuxieme nombre : ");
-var divisiblePar4 = (saisie2 % 4 === 0) ? "divisible par 4" : "non divisible par 4";
-console.log(divisiblePar4);

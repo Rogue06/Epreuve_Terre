@@ -5,7 +5,6 @@ for (let x of f) {
   document.getElementById("demo").innerHTML += x;
 } */
 
-const { stringify } = require("querystring");
 
 
 
@@ -21,7 +20,7 @@ let tab = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","
 for(let i =0; i < tab.length; i++){
 
 
-if(i === process.argv[2]){break} 
+if(tab[i] === process.argv[2]){break} 
 
 tab.shift();}
 console.log(tab.join(""));
