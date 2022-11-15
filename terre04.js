@@ -22,7 +22,7 @@ Attention : gérez aussi les entiers négatifs.
  */
 
 let saisie1 = process.argv[2];
-let entier = parseInt(saisie1, 10); // permet de "parser" la string récuperé suur argv[2] et la parser en entier 
+parseInt(saisie1, 10); // permet de "parser" la string récuperé suur argv[2] et la parser en entier 
 
 if(saisie1 % 2 == 0){
     console.log("pair");
