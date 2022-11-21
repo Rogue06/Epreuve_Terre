@@ -12,9 +12,6 @@ solide
 !
 
  */
-
-const process = require("process");
-
 let args = process.argv.slice(2);
 /**
  * AUTRE SOLUTION (moins conventionelle), à la place de process.argv.slice(2);
