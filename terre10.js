@@ -31,10 +31,20 @@ for(let i = 2; i < nombre; i++){
     if(nombre % i === 0 ){
         console.log("le chiffre " +nombre+ " n'est pas un entier premier :(");
         break;
-    }else if(i+1 === nombre) {
+    }else if(i === nombre-1) {
         console.log("le chiffre " +nombre+ " est bien un entier premier :)");
         
 }
 }
 }
 
+/**
+ * exemple : i = 2 : on commence à 2
+i++ : on incrémente de 1 à chaque nouvelle itération donc 3, puis 4,...
+i < 100 : on continue tant que i strictement inférieur à 100, autrement dit on s'arrête à 99
+avec 100, dans la boucle i prendra les valeurs 2, 3, 4, ... jusqu'à 99 inclus.
+*
+*Puisque i s'arrête à 99 (100 - 1).
+Donc, en généralisant, i s'arrête à "nombre - 1".
+La dernière itération est donc i === nombre - 1 ce qui peut s'écrire aussi i + 1 === nombre
+ */
