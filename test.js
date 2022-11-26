@@ -1,14 +1,20 @@
-
-let saisie1 = process.argv[2];
-parseInt(saisie1, 10); // permet de "parser" la string récuperé suur argv[2] et la parser en entier 
-
-if(saisie1 % 2 == 0){
-    console.log("pair");
-    
-}else if(saisie1 % 2 == 1 || saisie1 % 2 == -1){ // gestion des entiers pos et neg 
-    console.log("impair"); 
+function timeConversion(s) {
+    const ampm = s.slice(-2);
+    const hours = Number(s.slice(0, 2));
+    let time = s.slice(0, -2);
+    if (ampm === 'AM') {
+        if (hours === 12) { // 12am edge-case
+            return  time.replace(s.slice(0, 2), '00');
+        }
+        return time;
+    } else if (ampm === 'PM') {
+        if (hours !== 12) {
+            return time.replace(s.slice(0, 2), String(hours + 12));
+        } 
+        return time; // 12pm edge-case
+    }
+    return 'Error: AM/PM format is not valid';
 }
-
 
 
 
