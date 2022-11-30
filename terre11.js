@@ -1,19 +1,36 @@
+// déclaration des variables
 const horaires = process.argv[2];
-const [heures, minutes] = horaires.split(":");
-const anteMeridiem = "am";
-const postMeridiem = "pm";
-const heuresSoir = (heures - 12);
-const minuit = (heures - 24);
+let [heures, minutes] = horaires.split(":");
+let meridiem;
 
+
+// validation des données
+if (heures < 0 || heures >= 24) {
+    console.log("veuillez rentrer un horaire au bon format, exemple 20:30 ");
+    process.exit(1);
+}
+
+// traitement
+
+// calcul am/pm
+if (heures > 0 && heures < 12) {
+    meridiem = 'am';
+} else {
+    meridiem = 'pm';
+}
+// calcul des heures
 if(heures > 12 && heures < 24){
-    console.log(heuresSoir+ ":" +minutes+""+postMeridiem)
+ 
+    heures = heures - 12;
 }else if(heures <= 12){
-    console.log(heures+ ":" +minutes+""+anteMeridiem );
-}else if(heures == 24){
-    console.log(minuit+ ":" +minutes+""+anteMeridiem);
-}else{
-    console.log("veuillez rentrer un horaire au format 00:00")
-} 
+    
+    heures = heures;
+}
+    // affichage du résultat
+    console.log(heures+":"+minutes+""+meridiem); 
+    
+
+
 
 
 
