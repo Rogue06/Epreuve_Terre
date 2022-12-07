@@ -1,11 +1,3 @@
-/*const fruits = ["Banana", "Orange", "Apple", "Mango"];
-const f = fruits.entries();
-
-for (let x of f) {
-  document.getElementById("demo").innerHTML += x;
-} */
-
-
 
 
 //filter() Crée un nouveau tableau avec tous les éléments d'un tableau qui ont passé un test.
